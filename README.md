@@ -1,6 +1,6 @@
 # Code Repository for Temporal 101 (Java)
 This repository provides code used for exercises and demonstrations
-included in the Go version of the 
+included in the Java version of the 
 [Temporal 101](https://learn.temporal.io/courses/temporal_101) 
 training course.
 
