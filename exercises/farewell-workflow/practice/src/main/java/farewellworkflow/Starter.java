@@ -1,4 +1,4 @@
-package greetingworkflow;
+package farewellworkflow;
 
 import io.temporal.client.WorkflowClient;
 import io.temporal.client.WorkflowOptions;

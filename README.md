@@ -11,7 +11,7 @@ Directory Name                | Exercise
 :---------------------------- | :----------------------------
 `exercises/hello-workflow`    | [Exercise 1](exercises/hello-workflow/README.md)
 `exercises/hello-web-ui`      | [Exercise 2](exercises/hello-web-ui/README.md)
-`exercises/greeting-workflow` | [Exercise 3](exercises/greeting-workflow/README.md)
+`exercises/farewell-workflow` | [Exercise 3](exercises/farewell-workflow/README.md)
 `exercises/finale-workflow`   | [Exercise 4](exercises/finale-workflow/README.md)
 
 

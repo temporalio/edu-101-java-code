@@ -5,25 +5,65 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.temporal.learn</groupId>
-    <artifactId>workflow-definition-demo</artifactId>
+    <artifactId>farewell-workflow-practice</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <name>workflow-definition (demo)</name>
+    <name>farewell-workflow (practice)</name>
     <url>https://learn.temporal.io/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>io.temporal</groupId>
+            <artifactId>temporal-sdk</artifactId>
+            <version>1.19.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.temporal</groupId>
+            <artifactId>temporal-testing</artifactId>
+            <version>1.19.1</version>
+            <scope>test</scope>
+        </dependency>  
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+    
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.1.1</version>
+            <scope>test</scope>
+        </dependency>  
+
+        <dependency>
+            <groupId>org.rapidoid</groupId>
+            <artifactId>rapidoid-quick</artifactId>
+            <version>5.5.5</version>
+        </dependency>
+  
     </dependencies>
 
     <build>

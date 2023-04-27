@@ -12,19 +12,19 @@ in the `solution` subdirectory.
 
 ## Part A: Review the Workflow Business Logic
 
-1. Open the `HelloWorkflowWorkflow.java` and `HelloWorkflowWorkflowImpl.java` files (located in the `practice/main/java/helloworkflow` subdirectory) in the editor
+1. Open the `HelloWorkflowWorkflow.java` and `HelloWorkflowWorkflowImpl.java` files (located in the `practice/src/main/java/helloworkflow` subdirectory) in the editor
 2. Review the input parameters, business logic, and return value. 
 
 ## Part B: Specify a Task Queue Name for the Worker
 
-1. Open the `HelloWorkflowWorker.java` file (located in the `practice/main/java/helloworkflow` subdirectory) in the editor
+1. Open the `HelloWorkflowWorker.java` file (located in the `practice/src/main/java/helloworkflow` subdirectory) in the editor
 2. Specify `greeting-tasks` as the name of the task queue
 3. Save your changes
 
 ## Part C1: Fetch the Dependencies and Compile the Code
 
 1. Open a terminal window in the environment and change to the `practice` subdirectory for this exercise
-2. Run the following command to compile the code, as well as download and install the Java Dependencies needed by the code, which will include the Temporal Java SDK
+2. Run the following command to compile the code, as well as download and install the Java dependencies needed by the code, which will include the Temporal Java SDK
 
 ```
 $ mvn compile

@@ -1,4 +1,4 @@
-package greetingworkflow;
+package farewellworkflow;
 
 import io.temporal.client.WorkflowClient;
 import io.temporal.serviceclient.WorkflowServiceStubs;
@@ -18,7 +18,8 @@ public class GreetingWorker {
 
         worker.registerWorkflowImplementationTypes(GreetingWorkflowImpl.class);
 
-        worker.registerActivitiesImplementations(new GreetingActivitiesImpl());
+        // TODO: Register your Activity Implementations
+        worker.registerActivitiesImplementations(new TODO());
 
         factory.start();
     }

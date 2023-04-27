@@ -36,7 +36,8 @@ $ java -classpath \
 In another terminal, run this command:
 
 ```
-$ mvn exec:java -Dexec.mainClass="finale.FinaleWorker"
+$ cd go
+$ go run worker/main.go
 ```
 
 # Start the Workflow (Go)
@@ -45,7 +46,8 @@ but be sure to replace `Mason Egger` with your
 full name.
 
 ```
-$ mvn exec:java -Dexec.mainClass="finale.Starter" -Dexec.args="Mason Egger"
+$ cd go
+$ go run start/main.go "Mason Egger"
 ```
 
 * Once the workflow is complete, use the explorer

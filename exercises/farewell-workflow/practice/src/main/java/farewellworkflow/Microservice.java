@@ -1,4 +1,4 @@
-package greetingworkflow;
+package farewellworkflow;
 
 import java.io.IOException;
 
