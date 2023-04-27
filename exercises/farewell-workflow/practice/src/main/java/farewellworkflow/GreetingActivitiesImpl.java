@@ -1,4 +1,4 @@
-package greetingworkflow;
+package farewellworkflow;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import java.net.HttpURLConnection;
