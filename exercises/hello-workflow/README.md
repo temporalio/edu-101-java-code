@@ -24,7 +24,7 @@ in the `solution` subdirectory.
 ## Part C1: Fetch the Dependencies and Compile the Code
 
 1. Open a terminal window in the environment and change to the `practice` subdirectory for this exercise
-2. Run the following command to compile the code, as well as download and install the Java Dependencies needed by the code, which will include the Temporal Java SDK
+2. Run the following command to compile the code, as well as download and install the Java dependencies needed by the code, which will include the Temporal Java SDK
 
 ```
 $ mvn compile
