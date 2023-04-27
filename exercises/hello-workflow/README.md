@@ -12,12 +12,12 @@ in the `solution` subdirectory.
 
 ## Part A: Review the Workflow Business Logic
 
-1. Open the `HelloWorkflowWorkflow.java` and `HelloWorkflowWorkflowImpl.java` files (located in the `practice/src/main/java` subdirectory) in the editor
+1. Open the `HelloWorkflowWorkflow.java` and `HelloWorkflowWorkflowImpl.java` files (located in the `practice/src/main/java/helloworkflow` subdirectory) in the editor
 2. Review the input parameters, business logic, and return value. 
 
 ## Part B: Specify a Task Queue Name for the Worker
 
-1. Open the `HelloWorkflowWorker.java` file (located in the `practice/src/main/java` subdirectory) in the editor
+1. Open the `HelloWorkflowWorker.java` file (located in the `practice/src/main/java/helloworkflow` subdirectory) in the editor
 2. Specify `greeting-tasks` as the name of the task queue
 3. Save your changes
 
