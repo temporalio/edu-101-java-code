@@ -6,17 +6,18 @@ import io.temporal.client.WorkflowStub;
 import io.temporal.serviceclient.WorkflowServiceStubs;
 
 public class Starter {
+
     public static void main(String[] args) throws Exception {
 
         WorkflowServiceStubs service = WorkflowServiceStubs.newLocalServiceStubs();
 
-        WorkflowClient client = WorkflowClient.newInstance(service);        
+        WorkflowClient client = WorkflowClient.newInstance(service);
 
         WorkflowOptions options = WorkflowOptions.newBuilder()
-                    .setWorkflowId("generate-certificate-workflow")
-                    .setTaskQueue("generate-certificate-taskqueue")
-                    .build();
-       
+                .setWorkflowId("generate-certificate-workflow")
+                .setTaskQueue("generate-certificate-taskqueue")
+                .build();
+
         CertificateGeneratorWorkflow workflow = client.newWorkflowStub(CertificateGeneratorWorkflow.class, options);
 
         System.out.println("Calling workflow with " + args[0]);
