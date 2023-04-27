@@ -1,7 +1,6 @@
 package workflowdefinition;
 
+public interface Workflow {
 
-public interface Workflow 
-{
     String greetSomeone(String name);
 }
