@@ -1,81 +1,75 @@
 package greetingworkflow;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
+
+import org.rapidoid.http.Req;
+import org.rapidoid.http.ReqRespHandler;
+import org.rapidoid.http.Resp;
+import org.rapidoid.setup.On;
+import org.rapidoid.u.U;
+
 import java.util.Map;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpServer;
 
 public class Microservice {
 
-    public static void main(String[] args) throws Exception {
-        HttpServer server = HttpServer.create(new InetSocketAddress(9999), 0);
-        server.createContext("/get-spanish-greeting", new spanishGreetingHandler());
-        server.createContext("/get-spanish-farewell", new spanishFarewellHandler());
-        server.setExecutor(null);
-        server.start();
-        System.out.println("Server is listening on port 9999");
+    // port number where this service will listen for incoming HTTP requests
+    public static final int PORT_NUMBER = 9999;
+
+    // IP address to which the service will be bound. Using a value of 0.0.0.0
+    // will make it available on all available interfaces, but you could use
+    // 127.0.0.1 to restrict it to the loopback interface
+    public static final String SERVER_IP = "0.0.0.0";
+
+    public static void main(String[] args) throws IOException {
+        // Start the service on the specified IP address and port
+        On.address(SERVER_IP).port(PORT_NUMBER);
+
+        // Define the service endpoints and handlers
+        On.get("/get-spanish-greeting").plain(new GreetingHandler());
+        On.get("/get-spanish-farewell").plain(new FarewellHandler());
+
+        // Also define a catch-all to return an HTTP 404 Not Found error if the URL
+        // path in the request didn't match an endpoint defined above. It's essential
+        // that this code remains at the end.
+        On.req((req, resp) -> {
+            String message = String.format("Error: Invalid endpoint address '%s'", req.path());
+            return req.response().result(message).code(404);
+        });
     }
 
-    static class spanishGreetingHandler implements HttpHandler {
-        public void handle(HttpExchange exchange) throws IOException {
-            String query = exchange.getRequestURI().getQuery();
-            String name = "";
-            String response = "";
-            int code = 200;
-            if (query != null) {
-                Map<String, String> queryMap = queryToMap(query);
-                name = queryMap.get("name");
+    private static class GreetingHandler implements ReqRespHandler {
+
+        @Override
+        public Object execute(Req req, Resp resp) throws Exception {
+            Map<String, String> params = req.params();
+
+            if (!params.containsKey("name")) {
+                String message = "Error: Missing required 'name' parameter!";
+                return req.response().result(message).code(500);
             }
-            if (name.equals("")) {
-                response = "Missing required 'name' parameter.";
-                code = 400;
-            } else {
-                response = String.format("Hola, %s!", name);
-            }
-            exchange.sendResponseHeaders(code, response.length());
-            OutputStream os = exchange.getResponseBody();
-            os.write(response.getBytes());
-            os.close();
+
+            String name = params.get("name");
+            String response = String.format("¡Hola, %s!", name);
+            return U.str(response);
         }
+
     }
 
-    static class spanishFarewellHandler implements HttpHandler {
-        public void handle(HttpExchange exchange) throws IOException {
-            String query = exchange.getRequestURI().getQuery();
-            String name = "";
-            String response = "";
-            int code = 200;
-            if (query != null) {
-                Map<String, String> queryMap = queryToMap(query);
-                name = queryMap.get("name");
+    private static class FarewellHandler implements ReqRespHandler {
+
+        @Override
+        public Object execute(Req req, Resp resp) throws Exception {
+            Map<String, String> params = req.params();
+
+            if (!params.containsKey("name")) {
+                String message = "Error: Missing required 'name' parameter!";
+                return req.response().result(message).code(500);
             }
-            if (name.equals("")) {
-                response = "Missing required 'name' parameter.";
-                code = 400;
-            } else {
-                response = String.format("Adios, %s!", name);
-            }
-            exchange.sendResponseHeaders(code, response.length());
-            OutputStream os = exchange.getResponseBody();
-            os.write(response.getBytes());
-            os.close();
+
+            String name = params.get("name");
+            String response = String.format("¡Adiós, %s!", name);
+            return U.str(response);
         }
-    }
 
-    private static Map<String, String> queryToMap(String query) {
-        Map<String, String> result = new java.util.HashMap<>();
-        for (String param : query.split("&")) {
-            String[] pair = param.split("=");
-            if (pair.length > 1) {
-                result.put(pair[0], pair[1]);
-            } else {
-                result.put(pair[0], "");
-            }
-        }
-        return result;
     }
-
 }
