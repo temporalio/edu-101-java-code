@@ -2,24 +2,18 @@
 One of the benefits of Temporal is that it provides SDKs for several
 languages and you can use multiple languages in the context of a single
 Workflow. For example, you might write your Workflow in Go but use
-Java or TypeScript for an Activity in that workflow. Or you may have
-an Activity implemented by one team and a Workflow that wants to make
-use of that Activity by implementing it.
+Java or TypeScript for an Activity in that workflow. 
 
 The last exercise in this workshop does exactly that. The Workflow
-is written in Java, but the Activity that is executed as part
-of this Workflow is a precompiled jar, as is the Worker that runs it.
-Since the Workflow and Activities are two separate implementations, 
-you'll need to start two Worker programs, one in each implementation.
+itself is written in Go, but the Activity that is executed as part
+of this Workflow is written in Java, as is the Worker that runs it.
+Since the Activity is written in Java, it's able to use a Java graphics
+library that would otherwise be would be incompatible with a typical 
+Go program. Since the Workflow and Activities are implemented in two 
+different languages, you'll need to start two Worker programs, one 
+written in Java that will execute the Activity code and one written 
+in Go that will execute the Workflow code.
 
-
-# Compile the code
-Before running this exercise, compile your Java code with the following
-command:
-
-```
-mvn compile
-```
 
 
 # Run the Activity Worker (implemented in Java):
@@ -36,7 +30,6 @@ $ java -classpath \
 In another terminal, run this command:
 
 ```
-$ cd go
 $ go run worker/main.go
 ```
 
@@ -46,15 +39,14 @@ but be sure to replace `Mason Egger` with your
 full name.
 
 ```
-$ cd go
 $ go run start/main.go "Mason Egger"
 ```
 
 * Once the workflow is complete, use the explorer
 view on the left side of the exercise environment
 to locate the file created by this workflow. It
-will have a name similar to `101_certificate_sally_egger.pdf`,
-only with your name in place of `mason_egger`.
+will have a name similar to `101_certificate_sally_jiang.pdf`,
+only with your name in place of `sally_jiang`.
 * Right-click its icon in the explorer view and choose
 **Download...**. 
 * After you've downloading it to your
