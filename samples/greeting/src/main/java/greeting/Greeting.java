@@ -1,6 +1,6 @@
 package greeting;
 
-public interface Workflow {
+public interface Greeting {
 
     String greetSomeone(String name);
 }

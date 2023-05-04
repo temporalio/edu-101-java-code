@@ -1,6 +1,6 @@
-package workflowdefinition;
+package greeting;
 
-public class WorkflowImpl implements Workflow {
+public class GreetingImpl implements Greeting {
 
     @Override
     public String greetSomeone(String name) {
