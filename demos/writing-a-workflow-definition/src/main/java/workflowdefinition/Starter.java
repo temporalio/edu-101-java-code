@@ -1,12 +1,10 @@
-package workflowdefinition;
+package io.temporal.learn;
 
 public class Starter {
 
     public static void main(String[] args) {
-
-        Workflow workflow = new WorkflowImpl();
-        String greeting = workflow.greetSomeone(args[0]);
-        System.out.println(greeting);
+        Greeting greeting = new GreetingImpl();
+        String greetingMsg = greeting.greetSomeone(args[0]);
+        System.out.println(greetingMsg);
     }
-
 }

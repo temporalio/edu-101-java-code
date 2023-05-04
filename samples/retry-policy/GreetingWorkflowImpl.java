@@ -11,15 +11,16 @@ import java.time.Duration;
 
 public class GreetingWorkflowImpl implements GreetingWorkflow {
 
+    RetryOptions retryOptions = RetryOptions.newBuilder()
+        .setInitialInterval(Duration.ofSeconds(15))
+        .setBackoffCoefficient(2.0)
+        .setMaximumInterval(Duration.ofSeconds(60))
+        .setMaximumAttempts(100)
+        .build()
+
     ActivityOptions options = ActivityOptions.newBuilder()
             .setStartToCloseTimeout(Duration.ofSeconds(5))
-            .setRetryOptions(
-                    RetryOptions.newBuilder()
-                            .setInitialInterval(Duration.ofSeconds(15))
-                            .setBackoffCoefficient(2.0)
-                            .setMaximumInterval(Duration.ofSeconds(60))
-                            .setMaximumAttempts(100)
-                            .build())
+            .setRetryOptions(retryOptions)
             .build();
 
     private final GreetingActivities activities = Workflow.newActivityStub(GreetingActivities.class, options);
