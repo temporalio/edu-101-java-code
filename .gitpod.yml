@@ -19,6 +19,7 @@ tasks:
       clear
       echo "Use this terminal to run commands.."
       source /workspace/edu-101-java-code/.bash_aliases
+      curl -sSf https://temporal.download/cli.sh | sh
     openMode: split-right
   - name: Temporal Local Development Server
     command: |
