@@ -8,6 +8,8 @@ tasks:
       echo "waiting for server...."      
       clear
       source /workspace/edu-101-java-code/.bash_aliases
+      export TEMPORAL_CORS_ORIGINS=http://localhost:3000
+      export TEMPORAL_NOTIFY_ON_NEW_VERSION=false
       temporal server start-dev --ui-port 8080
   - name: Worker
     command: |
