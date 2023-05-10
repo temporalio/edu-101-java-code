@@ -13,7 +13,7 @@ tasks:
       clear
       echo "Use this terminal to start your worker."
       source /workspace/edu-101-java-code/.bash_aliases
-  - name: Terminal
+  - name: Terminal 1
     command: |
       gp open README.md
       clear
@@ -21,11 +21,13 @@ tasks:
       source /workspace/edu-101-java-code/.bash_aliases
       curl -sSf https://temporal.download/cli.sh | sh
     openMode: split-right
+  - name: Terminal 2
+    command: |
+      echo "Use this terminal to start your microservice in Exercise 3"
+    openMode: split-right
   - name: Temporal Local Development Server
     command: |
-      gp sync-await dockerpull
-      cd temporal-server
-      docker-compose up
+      temporal server start-dev
     openMode: tab-after
 
 ports:
