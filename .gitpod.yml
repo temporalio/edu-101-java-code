@@ -5,6 +5,7 @@ tasks:
     init: |
       pushd temporal-server
       docker-compose pull
+      curl -sSf https://temporal.download/cli.sh | sh
       popd
     command: |
       gp sync-done dockerpull
@@ -19,10 +20,10 @@ tasks:
       clear
       echo "Use this terminal to run commands.."
       source /workspace/edu-101-java-code/.bash_aliases
-      curl -sSf https://temporal.download/cli.sh | sh
     openMode: split-right
   - name: Terminal 2
     command: |
+      clear
       echo "Use this terminal to start your microservice in Exercise 3"
     openMode: split-right
   - name: Temporal Local Development Server
