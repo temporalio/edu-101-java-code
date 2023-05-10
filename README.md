@@ -41,8 +41,7 @@ The following links provide additional information that you may find helpful as 
 You can launch an exercise environment for this course in GitPod by 
 clicking the button below:
 
-<TODO: FIX ME>
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/temporalio/edu-101-go-code)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/temporalio/edu-101-java-code/tree/gitpod)
 
 Alternatively, you can follow 
 [these instructions](https://learn.temporal.io/getting_started/java/dev_environment/) to 
