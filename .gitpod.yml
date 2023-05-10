@@ -19,9 +19,9 @@ tasks:
   - name: Terminal
     command: |
       gp open README.md
-      clear
-      echo "Use this terminal to run commands.."
       source /workspace/edu-101-java-code/.bash_aliases
+      clear
+      echo "Use this terminal to run commands.."  
     openMode: split-right
   - name: Microservice
     command: |
