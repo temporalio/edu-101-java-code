@@ -16,7 +16,7 @@ public class GreetingWorkflowImpl implements GreetingWorkflow {
     @Override
     public String greetSomeone(String name){
         String spanishGreeting = activities.greetInSpanish(name);
-        String spanishFarewell = activities.farewellInSpanish(name);
+        String spanishFarewell = activities.farewellInSpanish(name);      
 
         return "\n" + spanishGreeting + "\n" + spanishFarewell;
     }

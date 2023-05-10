@@ -19,10 +19,10 @@ The `GreetingActivitiesImpl.java` implements the Activity methods and any other 
 microservice to get a customized greeting in Spanish. This file also contains a utility method
 (`callService`) that the Activity uses to call the microservice. 
 
-1. Open the `GreetingActivities.java` file (located in the `practice/src/main/java/greetingworkflow` subdirectory) in the editor.
+1. Open the `GreetingActivities.java` file (located in the `practice/src/main/java/farewellworkflow` subdirectory) in the editor.
 2. Define a new Activity method signature (using any valid name you like) that will get a custom farewell message from the microservice.
    1. Save your changes to the file
-3. Open the `GreetingActivitiesImpl.java` file (located in the `practice/src/main/java/greetingworkflow` subdirectory) in the editor.
+3. Open the `GreetingActivitiesImpl.java` file (located in the `practice/src/main/java/farewellworkflow` subdirectory) in the editor.
 4. Create a new Activity that will get a custom farewell message from the microservice.
    1. Copy the `greetInSpanish` method
    2. Rename the new method using the name that matches the new method signature you defined in `GreetingActivities.java`.
@@ -46,9 +46,9 @@ microservice to get a customized greeting in Spanish. This file also contains a 
 All commands below must be run from the `practice` subdirectory. Ensure your temporal cluster is running
 before executing the following commands:
 
-1. Start the microservice by running `mvn exec:java -Dexec.mainClass="greetingworkflow.Microservice"` in a terminal
-2. In another terminal, start your Worker by running `mvn exec:java -Dexec.mainClass="greetingworkflow.GreetingWorker"`
-3. In a third terminal, execute your Workflow by running `mvn exec:java -Dexec.mainClass="greetingworkflow.Starter" -Dexec.args="Mason"` 
+1. Start the microservice by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Microservice"` in a terminal
+2. In another terminal, start your Worker by running `mvn exec:java -Dexec.mainClass="farewellworkflow.GreetingWorker"`
+3. In a third terminal, execute your Workflow by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Starter" -Dexec.args="Mason"` 
     (replacing `Mason` with your own name)
 
 If there is time remaining, experiment with Activity failures and retries 
