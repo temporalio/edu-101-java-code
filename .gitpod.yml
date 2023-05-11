@@ -14,17 +14,17 @@ tasks:
   - name: Worker
     command: |
       gp ports await 7233 && gp ports await 8080 && sleep 25 && gp preview $(gp url 8080)
-      pushd exercises/helloworkflow/solution
-      mvn compile
-      mvn clean
-      popd
       source /workspace/edu-101-java-code/.bash_aliases
-      clear
+      
       echo "Use this terminal to run your Worker"
     openMode: tab-after
   - name: Terminal
     command: |
       gp open README.md
+      pushd exercises/hello-workflow/solution
+      mvn compile
+      mvn clean
+      popd
       source /workspace/edu-101-java-code/.bash_aliases
       clear
       echo "Use this terminal to run commands.."  
