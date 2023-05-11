@@ -9,9 +9,7 @@ public class GreetingWorker {
     public static void main(String[] args) {
 
         WorkflowServiceStubs service = WorkflowServiceStubs.newLocalServiceStubs();
-
         WorkflowClient client = WorkflowClient.newInstance(service);
-
         WorkerFactory factory = WorkerFactory.newInstance(client);
 
         Worker worker = factory.newWorker("greeting-tasks");

@@ -10,9 +10,7 @@ public class HelloWorkflowWorker {
     public static void main(String[] args) {
 
         WorkflowServiceStubs service = WorkflowServiceStubs.newLocalServiceStubs();
-
         WorkflowClient client = WorkflowClient.newInstance(service);
-
         WorkerFactory factory = WorkerFactory.newInstance(client);
 
         // TODO: modify the statement below to specify the task queue name
