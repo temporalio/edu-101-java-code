@@ -12,10 +12,10 @@ import java.time.Duration;
 public class GreetingWorkflowImpl implements GreetingWorkflow {
 
     RetryOptions retryOptions = RetryOptions.newBuilder()
-        .setInitialInterval(Duration.ofSeconds(15))
-        .setBackoffCoefficient(2.0)
-        .setMaximumInterval(Duration.ofSeconds(60))
-        .setMaximumAttempts(100)
+        .setInitialInterval(Duration.ofSeconds(15))   // first retry will occur after 15 seconds
+        .setBackoffCoefficient(2.0)                   // double the delay after each retry
+        .setMaximumInterval(Duration.ofSeconds(60))   // up to a maximum delay of 60 seconds
+        .setMaximumAttempts(100)                      // fail the Activity after 100 attempts
         .build()
 
     ActivityOptions options = ActivityOptions.newBuilder()
