@@ -1,31 +1,41 @@
 tasks:
   - name: Set up aliases 
     init: cp .bash_aliases ~/.bash_aliases   # ensure new terminals also have access to tctl
-  - name: Worker
+  - name: Temporal Local Development Server
     init: |
-      pushd temporal-server
-      docker-compose pull
-      popd
+      curl -sSf https://temporal.download/cli.sh | sh
     command: |
-      gp sync-done dockerpull
-      echo "waiting for server...."
-      gp ports await 7233 && gp ports await 8080 && sleep 25 && gp preview $(gp url 8080)
+      echo "waiting for server...."      
       clear
-      echo "Use this terminal to start your worker."
-      source /workspace/edu-101-go-code/.bash_aliases
+      source /workspace/edu-101-java-code/.bash_aliases
+      export TEMPORAL_CORS_ORIGINS=http://localhost:3000
+      export TEMPORAL_NOTIFY_ON_NEW_VERSION=false
+      temporal server start-dev --ui-port 8080
+  - name: Worker
+    command: |
+      gp ports await 7233 && gp ports await 8080 && sleep 25 && gp preview $(gp url 8080)
+      source /workspace/edu-101-java-code/.bash_aliases
+      clear
+      echo "Use this terminal to run your Worker"
+    openMode: tab-after
   - name: Terminal
     command: |
       gp open README.md
+      pushd exercises/hello-workflow/solution
+      mvn compile
+      mvn clean
+      popd
+      source /workspace/edu-101-java-code/.bash_aliases
       clear
-      echo "Use this terminal to run commands.."
-      source /workspace/edu-101-go-code/.bash_aliases
+      echo "Use this terminal to run commands.."  
     openMode: split-right
-  - name: Temporal Local Development Server
+  - name: Microservice
     command: |
-      gp sync-await dockerpull
-      cd temporal-server
-      docker-compose up
-    openMode: tab-after
+      source /workspace/edu-101-java-code/.bash_aliases
+      clear
+      echo "Use this terminal to start your microservice in Exercise 3"
+    openMode: split-right
+  
 
 ports:
   - name: Temporal server
