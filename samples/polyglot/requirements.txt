@@ -1,0 +1,4 @@
+protobuf==4.23.1
+temporalio==1.2.0
+types-protobuf==4.23.0.1
+typing_extensions==4.5.0
