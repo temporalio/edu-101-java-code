@@ -26,10 +26,9 @@ public class Microservice {
 
         // Define the service endpoints and handlers
         On.get("/get-spanish-greeting").plain(new GreetingHandler());
-        On.get("/get-spanish-farewell").plain(new FarewellHandler());
 
         // Also define a catch-all to return an HTTP 404 Not Found error if the URL
-        // path in the request didn't match an endpoint defined above. It's essential
+        // path in the request didn't match the endpoint defined above. It's essential
         // that this code remains at the end.
         On.req((req, resp) -> {
             String message = String.format("Error: Invalid endpoint address '%s'", req.path());
@@ -50,24 +49,6 @@ public class Microservice {
 
             String name = params.get("name");
             String response = String.format("¡Hola, %s!", name);
-            return U.str(response);
-        }
-
-    }
-
-    private static class FarewellHandler implements ReqRespHandler {
-
-        @Override
-        public Object execute(Req req, Resp resp) throws Exception {
-            Map<String, String> params = req.params();
-
-            if (!params.containsKey("name")) {
-                String message = "Error: Missing required 'name' parameter!";
-                return req.response().result(message).code(500);
-            }
-
-            String name = params.get("name");
-            String response = String.format("¡Adiós, %s!", name);
             return U.str(response);
         }
 

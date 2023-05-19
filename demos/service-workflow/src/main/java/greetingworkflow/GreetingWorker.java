@@ -6,6 +6,7 @@ import io.temporal.worker.Worker;
 import io.temporal.worker.WorkerFactory;
 
 public class GreetingWorker {
+
     public static void main(String[] args) {
 
         WorkflowServiceStubs service = WorkflowServiceStubs.newLocalServiceStubs();
