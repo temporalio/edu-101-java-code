@@ -8,5 +8,5 @@ public interface GreetingWorkflow {
 
     @WorkflowMethod
     String greetSomeone(String name);
-    
+
 }
