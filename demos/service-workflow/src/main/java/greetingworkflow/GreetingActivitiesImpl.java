@@ -11,22 +11,13 @@ public class GreetingActivitiesImpl implements GreetingActivities {
 
     @Override
     public String greetInSpanish(String name) {
-        return callService("get-spanish-greeting", name);
-    }
-
-    @Override
-    public String farewellInSpanish(String name) {
-        return callService("get-spanish-farewell", name);
-    }
-
-    String callService(String stem, String name) {
         StringBuilder builder = new StringBuilder();
 
-        String baseUrl = "http://localhost:9999/%s?name=%s";
+        String baseUrl = "http://localhost:9999/get-spanish-greeting?name=%s";
 
         URL url = null;
         try {
-            url = new URL(String.format(baseUrl, stem, URLEncoder.encode(name, "UTF-8")));
+            url = new URL(String.format(baseUrl, URLEncoder.encode(name, "UTF-8")));
         } catch (IOException e) {
             throw Activity.wrap(e);
         }
