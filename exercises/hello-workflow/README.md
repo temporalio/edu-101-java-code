@@ -35,7 +35,7 @@ $ mvn compile
 2. Run the following command in the terminal window to start the Worker
 
 ```
-$ mvn exec:java -Dexec.mainClass="helloworkflow.HelloWorkflowWorker"
+$ mvn compile exec:java -Dexec.mainClass="helloworkflow.HelloWorkflowWorker"
 ```
 
 ## Part D: Start the Workflow from the Command Line
