@@ -4,7 +4,7 @@ tasks:
     init: cp .bash_aliases ~/.bash_aliases   # ensure new terminals also have access to tctl
   - name: Temporal Local Development Server
     init: |
-      curl -sSf https://temporal.download/cli.sh | sh  -s - --dir /workspace
+      curl -sSf https://temporal.download/cli.sh | sh
     command: |
       cp .bash_aliases ~/.bash_aliases
       echo "waiting for server...."      
@@ -12,7 +12,7 @@ tasks:
       source /workspace/edu-101-java-code/.bash_aliases
       export TEMPORAL_CORS_ORIGINS=http://localhost:3000
       export TEMPORAL_NOTIFY_ON_NEW_VERSION=false
-      /workspace/bin/temporal server start-dev --ui-port 8080 --db-filename $HOME/.cluster-persistence.db
+      temporal server start-dev --ui-port 8080 --db-filename $HOME/.cluster-persistence.db
   - name: Worker
     command: |
       gp ports await 7233 && gp ports await 8080 && sleep 25 && gp preview $(gp url 8080)
