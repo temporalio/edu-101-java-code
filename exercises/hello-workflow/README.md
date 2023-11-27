@@ -15,7 +15,8 @@ in the `solution` subdirectory.
 ## GitPod Environment Shortcuts
 
 If you are executing the exercises in the provided GitPod environment, you
-can take advantage of certain aliases to aid in navigation.
+can take advantage of certain aliases to aid in navigation and execution of
+the code.
 
 | Command | Action                                                                                                                         |
 | :------ | :----------------------------------------------------------------------------------------------------------------------------- |
