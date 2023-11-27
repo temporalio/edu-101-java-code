@@ -22,7 +22,7 @@ ex3st() {
 # Exercise 4 aliases
 alias ex4="cd ${GITPOD_REPO_ROOT}/exercises/finale-workflow"
 alias ex4j="java -classpath java-activity-and-worker-1.1.jar io.temporal.training.PdfCertWorker"
-alias ex4w="ex4 && cd go && go run go/worker/main.go"
+alias ex4w="ex4 && cd go && go run worker/main.go"
 ex4st() {
     ex4
     cd go
