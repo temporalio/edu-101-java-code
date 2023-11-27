@@ -1,19 +1,32 @@
 # Exercise 1: Hello Workflow
-During this exercise, you will
-* Review the business logic of the provided Workflow Definition to understand its behavior
-* Modify the Worker initialization code to specify a task queue name
-* Run the Worker initialization code to start the Worker process
-* Execute the Workflow from the command line, specifying your name as input
 
-Make your changes to the code in the `practice` subdirectory (look for TODO 
-comments that will guide you to where you should make changes to the code). 
-If you need a hint or want to verify your changes, look at the complete version 
+During this exercise, you will
+
+- Review the business logic of the provided Workflow Definition to understand its behavior
+- Modify the Worker initialization code to specify a task queue name
+- Run the Worker initialization code to start the Worker process
+- Execute the Workflow from the command line, specifying your name as input
+
+Make your changes to the code in the `practice` subdirectory (look for TODO
+comments that will guide you to where you should make changes to the code).
+If you need a hint or want to verify your changes, look at the complete version
 in the `solution` subdirectory.
+
+## GitPod Environment Shortcuts
+
+If you are executing the exercises in the provided GitPod environment, you
+can take advantage of certain aliases to aid in navigation.
+
+| Command | Action                                                                                                                         |
+| :------ | :----------------------------------------------------------------------------------------------------------------------------- |
+| `ex1`   | Change to Exercise 1 Practice Directory                                                                                        |
+| `ex1s`  | Change to Exercise 1 Solution Directory                                                                                        |
+| `ex1w`  | Execute the Exercise 1 Worker. Must be within the appropriate directory for this to succeed. (either `practice` or `solution`) |
 
 ## Part A: Review the Workflow Business Logic
 
 1. Open the `HelloWorkflowWorkflow.java` and `HelloWorkflowWorkflowImpl.java` files (located in the `practice/src/main/java/helloworkflow` subdirectory) in the editor
-2. Review the input parameters, business logic, and return value. 
+2. Review the input parameters, business logic, and return value.
 
 ## Part B: Specify a Task Queue Name for the Worker
 
@@ -51,22 +64,18 @@ $ temporal workflow start \
     --input '"Mason"'
 ```
 
-Note that this command starts the Workflow, but it does not wait for it to complete or show the result. 
+Note that this command starts the Workflow, but it does not wait for it to complete or show the result.
 If you have time, continue with the optional part of the exercise below to see how to view the result using `temporal`.
 
 ## Part E (Optional): Display the Result
-You can run the following command to display the result of a Workflow Execution: 
+
+You can run the following command to display the result of a Workflow Execution:
 
 ```
 temporal workflow show --workflow-id my-first-workflow
 ```
 
-It is also possible, and often more convenient, to view this information using the Web UI. You will 
+It is also possible, and often more convenient, to view this information using the Web UI. You will
 have a chance to do this in the next exercise.
 
-
 ### This is the end of the exercise.
-
-
-
-
