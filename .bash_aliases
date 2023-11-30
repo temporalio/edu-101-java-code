@@ -1,5 +1,6 @@
 alias workspace="cd ${GITPOD_REPO_ROOT}"
 alias webui="gp preview $(gp url 8080)"
+alias temporal="/workspace/bin/temporal"
 
 # Exercise 1 aliases
 alias ex1="cd ${GITPOD_REPO_ROOT}/exercises/hello-workflow/practice"
