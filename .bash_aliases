@@ -31,7 +31,7 @@ ex4st() {
 
 
 
-export PATH="$PATH:/home/gitpod/.temporalio/bin"
+export PATH="$PATH:/workspace/bin"
 echo "temporal configured! try typing temporal -v"
 echo "Your workspace is located at: ${GITPOD_REPO_ROOT}"
 echo "Type the command     workspace      to return to the workspace directory at any time."
