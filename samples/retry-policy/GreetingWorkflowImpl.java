@@ -16,7 +16,7 @@ public class GreetingWorkflowImpl implements GreetingWorkflow {
         .setBackoffCoefficient(2.0)                   // double the delay after each retry
         .setMaximumInterval(Duration.ofSeconds(60))   // up to a maximum delay of 60 seconds
         .setMaximumAttempts(100)                      // fail the Activity after 100 attempts
-        .build()
+        .build();
 
     ActivityOptions options = ActivityOptions.newBuilder()
             .setStartToCloseTimeout(Duration.ofSeconds(5))
