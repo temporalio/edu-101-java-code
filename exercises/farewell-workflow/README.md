@@ -63,11 +63,12 @@ microservice to get a customized greeting in Spanish. This file also contains a 
 All commands below must be run from the `practice` subdirectory. Ensure your temporal cluster is running
 before executing the following commands:
 
-1. Start the microservice by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Microservice"` in a terminal
+1. Compile the code using the command `mvn clean compile`
+2. Start the microservice by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Microservice"` in a terminal
    1. **Note:** If you're using GitPod, you can run the shortcut `ex3m`
-2. In another terminal, start your Worker by running `mvn exec:java -Dexec.mainClass="farewellworkflow.GreetingWorker"`
+3. In another terminal, start your Worker by running `mvn exec:java -Dexec.mainClass="farewellworkflow.GreetingWorker"`
    1. **Note:** If you're using GitPod, you can run the shortcut `ex3w`
-3. In a third terminal, execute your Workflow by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Starter" -Dexec.args="Mason"`
+4. In a third terminal, execute your Workflow by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Starter" -Dexec.args="Mason"`
    (replacing `Mason` with your own name)
    1. **Note:** If you're using GitPod, you can run the shortcut `ex3st Mason` (replacing `Mason` with your own name)
 
