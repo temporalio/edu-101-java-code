@@ -5,11 +5,16 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.temporal.learn</groupId>
-    <artifactId>samples</artifactId>
+    <artifactId>exercises</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>greeting</artifactId>
+  <artifactId>farewell-workflow</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>farewell-workflow-practice</module>
+    <module>farewell-workflow-solution</module>
+  </modules>
 
   <properties>
     <maven.compiler.source>21</maven.compiler.source>

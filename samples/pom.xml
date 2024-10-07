@@ -5,11 +5,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.temporal.learn</groupId>
-    <artifactId>samples</artifactId>
+    <artifactId>temporal-java-101</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>greeting</artifactId>
+  <artifactId>samples</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>greeting</module>
+  </modules>
 
   <properties>
     <maven.compiler.source>21</maven.compiler.source>

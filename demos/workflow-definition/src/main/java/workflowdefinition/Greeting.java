@@ -1,4 +1,4 @@
-package io.temporal.learn;
+package workflowdefinition;
 
 public interface Greeting {
 
