@@ -3,7 +3,7 @@ This example shows a basic Java Interface and Implementation with a method named
 It takes a string, representing a person's name, as input. It returns a greeting that includes
 this name as output.
 
-The example also includes a file `Starter` that will invoke this function, using a name
+The example also includes a file `Starter` that will invoke this method, using a name
 supplied as a command-line argument. For example, you may run this program by passing the name
 "Donna" to the program:
 
