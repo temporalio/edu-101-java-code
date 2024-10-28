@@ -27,7 +27,7 @@ the code.
 | `ex3w`            | Execute the Exercise 3 Worker. Must be within the appropriate directory for this to succeed. (either `practice` or `solution`)                        |
 | `ex3st YOUR_NAME` | Execute the Exercise 3 Starter, passing in your name. Must be within the appropriate directory for this to succeed. (either `practice` or `solution`) |
 
-## Part A: Write an Activity Function
+## Part A: Write an Activity Method
 
 The `GreetingActivities.java` file defines an interface with the Activity method signatures.
 The `GreetingActivitiesImpl.java` implements the Activity methods and any other utility methods.
