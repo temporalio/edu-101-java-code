@@ -41,9 +41,10 @@ $ java -classpath \
 
 # Run the Workflow Worker (implemented in Go):
 
-In another terminal, run this command:
+In another terminal, run these commands:
 
 ```
+$ cd go
 $ go run worker/main.go
 ```
 
@@ -51,11 +52,12 @@ $ go run worker/main.go
 
 # Start the Workflow (Go)
 
-In another terminal, run the following command,
+In another terminal, run the following commands,
 but be sure to replace `Mason Egger` with your
 full name.
 
 ```
+$ cd go
 $ go run start/main.go "Mason Egger"
 ```
 
