@@ -13,20 +13,6 @@ you'll need to change. If you get stuck and need additional hints, or
 if you want to check your work, look at the completed example in the
 `solution` directory.
 
-## GitPod Environment Shortcuts
-
-If you are executing the exercises in the provided GitPod environment, you
-can take advantage of certain aliases to aid in navigation and execution of
-the code.
-
-| Command           | Action                                                                                                                                                |
-| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ex3`             | Change to Exercise 3 Practice Directory                                                                                                               |
-| `ex3s`            | Change to Exercise 3 Solution Directory                                                                                                               |
-| `ex3m`            | Execute the Exercise 3 Microservice. Must be within the appropriate directory for this to succeed. (either `practice` or `solution`)                  |
-| `ex3w`            | Execute the Exercise 3 Worker. Must be within the appropriate directory for this to succeed. (either `practice` or `solution`)                        |
-| `ex3st YOUR_NAME` | Execute the Exercise 3 Starter, passing in your name. Must be within the appropriate directory for this to succeed. (either `practice` or `solution`) |
-
 ## Part A: Write an Activity Method
 
 The `GreetingActivities.java` file defines an interface with the Activity method signatures.
@@ -65,12 +51,9 @@ before executing the following commands:
 
 1. Compile the code using the command `mvn clean compile`
 2. Start the microservice by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Microservice"` in a terminal
-   1. **Note:** If you're using GitPod, you can run the shortcut `ex3m`
 3. In another terminal, start your Worker by running `mvn exec:java -Dexec.mainClass="farewellworkflow.GreetingWorker"`
-   1. **Note:** If you're using GitPod, you can run the shortcut `ex3w`
 4. In a third terminal, execute your Workflow by running `mvn exec:java -Dexec.mainClass="farewellworkflow.Starter" -Dexec.args="Mason"`
    (replacing `Mason` with your own name)
-   1. **Note:** If you're using GitPod, you can run the shortcut `ex3st Mason` (replacing `Mason` with your own name)
 
 If there is time remaining, experiment with Activity failures and retries
 by stopping the microservice (press Ctrl-C in its terminal) and re-running

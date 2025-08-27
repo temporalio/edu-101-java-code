@@ -13,22 +13,6 @@ For the exercises, make sure to run `temporal server start-dev --ui-port 8080 --
 | `exercises/farewell-workflow` | [Exercise 3](exercises/farewell-workflow/README.md) |
 | `exercises/finale-workflow`   | [Exercise 4](exercises/finale-workflow/README.md)   |
 
-## GitPod Environment Shortcuts
-
-If you are executing the exercises in the provided GitPod environment, you
-can take advantage of certain aliases to aid in navigation.
-
-| Command | Action                                  |
-| :------ | :-------------------------------------- |
-| `ex1`   | Change to Exercise 1 Practice Directory |
-| `ex1s`  | Change to Exercise 1 Solution Directory |
-| `ex2`   | Change to Exercise 2 Practice Directory |
-| `ex2s`  | Change to Exercise 2 Solution Directory |
-| `ex3`   | Change to Exercise 3 Practice Directory |
-| `ex3s`  | Change to Exercise 3 Solution Directory |
-| `ex4`   | Change to Exercise 4 Practice Directory |
-| `ex4s`  | Change to Exercise 4 Solution Directory |
-
 ## Instructor-Led Demonstrations
 
 | Directory Name           | Description                                                         |
