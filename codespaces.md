@@ -25,7 +25,7 @@ command line in the lower third of the screen:
 ![3 — Loaded Codespace](https://raw.githubusercontent.com/temporalio/temporal-learning/refs/heads/main/static/courses/common/codespaces/3-loaded-codespace.png)
 
 Before getting started, you'll want to open the Web UI and also open some 
-terminal windows to work in.
+terminal windows to work in. When your Web UI opens (as you can see in the next section), you can open a new tab and start the exercises without waiting for the `postStartCommand` to finish running.
 
 ### Opening the Web UI
 
