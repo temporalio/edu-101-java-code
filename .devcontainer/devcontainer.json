@@ -1,15 +1,24 @@
 {
-    "image": "temporalio/gitpod-edu:1.4",
+    "image": "temporalio/gitpod-edu:1.7",
     "customizations": {
+        "vscode": {
+            "settings": {
+                "markdown.styles": [".devcontainer/style.css"],
+                "workbench.editorAssociations": {
+                    "*.md": "vscode.markdown.preview.editor"
+                }
+            }
+        },
         "codespaces": {
             "openFiles": [
                 "README.md"
             ]
         }
     },
-    "forwardPorts": [8080, 7233, 9999],
-    "postStartCommand": "temporal server start-dev --ui-port 8080",
+    "forwardPorts": [7233, 8080, 8081, 8082, 8233],
+    "postStartCommand": "temporal server start-dev",
     "remoteEnv": {
-        "PROMPT_DIRTRIM": "2"
+        "PROMPT_DIRTRIM": "2",
+        "PS1": "\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ "
     }
 }
